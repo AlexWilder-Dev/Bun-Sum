@@ -1,0 +1,219 @@
+/*
+  Colours come straight off their stuff:
+  ink      – the logo's black, and the print on their burger wraps and bowls
+  paper    – the wrap paper and white bowls
+  mustard  – the logo's ampersand and squeeze bottle
+  box      – the yellow Buddy/Quad boxes (and their Linktree page)
+  tray     – the red trays at Hackney; used sparingly
+*/
+:root {
+  --ink: #111010;
+  --ink-2: #1d1b1a;
+  --ink-3: #2b2826;
+  --paper: #fbf7ee;
+  --paper-2: #f1ebdd;
+  --mustard: #f8c850;
+  --box: #f7df1e;
+  --tray: #d7282f;
+  --steel: #8d8a86;
+  --muted-on-paper: #5c5650;
+  --muted-on-ink: #b9b2a7;
+
+  --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+  --sticker: 'Bangers', 'Anton', sans-serif;
+  --body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: 18px;
+  --radius: 14px;
+  --dock-h: 74px;
+  --shadow-hard: 4px 4px 0 var(--ink);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--mustard);
+  outline-offset: 3px;
+}
+
+.on-box :focus-visible,
+.on-paper :focus-visible {
+  outline-color: var(--ink);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.display {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sticker {
+  font-family: var(--sticker);
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+
+/* surfaces */
+.on-ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+.on-paper {
+  background: var(--paper);
+  color: var(--ink);
+}
+.on-box {
+  background: var(--box);
+  color: var(--ink);
+}
+
+/* buttons: hard offset shadow, like the buttons on their Linktree */
+.btn {
+  --btn-bg: var(--ink);
+  --btn-fg: var(--paper);
+  --btn-shadow: var(--mustard);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  box-shadow: 4px 4px 0 var(--btn-shadow);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--btn-shadow);
+}
+.btn--light {
+  --btn-bg: var(--paper);
+  --btn-fg: var(--ink);
+  --btn-shadow: var(--ink);
+}
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+  --btn-shadow: transparent;
+  box-shadow: none;
+}
+.on-ink .btn--ghost {
+  --btn-fg: var(--paper);
+  border-color: var(--paper);
+}
+.btn--small {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+.btn svg {
+  flex: none;
+}
+
+/* the open/closed pill */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.status__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--steel);
+  flex: none;
+}
+.status--open .status__dot {
+  background: #2f9e44;
+  box-shadow: 0 0 0 3px rgb(47 158 68 / 0.25);
+}
+
+.price {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
