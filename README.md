@@ -35,7 +35,7 @@ npm run og       # public/og.jpg (1200×630) plus the favicon and home-screen ic
 
 ## Deploying
 
-The site builds for GitHub Pages at `https://alexwilder-dev.github.io/bun-and-sum/` (Vite `base` is `/bun-and-sum/`, and routing uses the URL hash). `.github/workflows/pages.yml` builds and checks every push, and deploys pushes to the repo's default branch. Pages needs "GitHub Actions" as its source.
+The site builds for GitHub Pages at `https://alexwilder-dev.github.io/Bun-Sum/` (Vite `base` is `/Bun-Sum/`, and routing uses the URL hash). `.github/workflows/pages.yml` builds and checks every push, and deploys pushes to the repo's default branch. Pages needs "GitHub Actions" as its source.
 
 The visit ping at the bottom of `index.html` posts to ntfy.sh. Replace `YOUR-NTFY-TOPIC` with your topic. Add `?v=name` to a link to tag who opened it. Open the site once with `#me` to stop your own visits pinging.
 

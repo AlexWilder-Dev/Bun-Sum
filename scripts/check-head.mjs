@@ -6,7 +6,7 @@ import sharp from 'sharp'
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const html = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf8')
 const head = html.slice(0, html.indexOf('</head>'))
-const SITE = 'https://alexwilder-dev.github.io/bun-and-sum/'
+const SITE = 'https://alexwilder-dev.github.io/Bun-Sum/'
 
 const meta = (attr, key) => {
   const m = head.match(new RegExp(`<meta[^>]*${attr}="${key}"[^>]*content="([^"]*)"`))
